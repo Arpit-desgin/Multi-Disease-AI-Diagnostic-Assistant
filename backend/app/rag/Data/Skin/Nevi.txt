@@ -1,0 +1,16 @@
+Nevi, also known as moles, are common benign skin growths formed by clusters of melanocytes, the pigment-producing cells, and most people develop 10-40 during their lifetime.
+Definition
+Nevi (singular: nevus) are benign proliferations of melanocytes appearing as circumscribed pigmented or skin-colored lesions on the skin, classified as congenital (present at birth) or acquired (developing later). Common types include junctional (flat, brown macules), compound (raised, dome-shaped), and intradermal (flesh-colored papules); atypical/dysplastic nevi feature irregular borders and color variation, conferring higher melanoma risk.
+Symptoms
+Symptoms typically involve small (1-6mm), round/oval, evenly pigmented spots that may be flat, raised, or hairy, often asymptomatic but occasionally itchy if irritated. Common nevi remain stable; dysplastic nevi show asymmetry, irregular borders, variegated color, and diameter >6mm (ABCDE changes warrant evaluation); congenital giant nevi (>20cm) carry malignant potential.
+Causes
+Nevi form when melanocytes cluster due to genetic factors and UV exposure triggering proliferation, with most acquired during childhood/adolescence via somatic mutations. Familial atypical multiple mole-melanoma syndrome (FAMMM) involves CDKN2A germline mutations; sun exposure accelerates nevus development, though not all nevi progress to malignancy.
+Risk Factors
+Key risk factors include fair skin (Fitzpatrick I-II), excessive UV exposure/sunburns, family history of melanoma/dysplastic nevi, personal history of >50 common nevi or >5 atypical nevi, and genetic syndromes like FAMMM or xeroderma pigmentosum. Childhood blistering sunburns and indoor tanning before age 30 significantly elevate atypical nevus count and melanoma odds.
+Diagnosis
+Diagnosis uses clinical exam with dermoscopy revealing symmetric pigment networks, dots/globules, or structureless areas in benign nevi versus atypical patterns (blue-white veil, polymorphous vessels) in dysplastic types. Biopsy (shave/excisional) confirms histology (maturation, no mitoses); total body mapping/ photography monitors high-risk patients; ABCDE rule screens for melanoma transformation.
+Treatment
+Treatment unnecessary for stable common nevi; cosmetic removal via shave excision, laser, or cryotherapy for irritated/prominent lesions. Dysplastic nevi excised with 2-5mm margins if suspicious; prophylactic excision debated for numerous atypical nevi in high-risk families; no systemic therapy, focus on surveillance every 3-6 months.
+Prevention
+Prevention emphasizes broad-spectrum SPF 30+ sunscreen daily, UPF clothing/shade avoidance 10am-4pm, no tanning beds, and monthly self-skin exams using ABCDE criteria. High-risk individuals need annual dermatologist full-body exams starting age 10-20; sun protection from infancy minimizes nevus count and dysplasia, reducing lifetime melanoma risk by 50%.
+

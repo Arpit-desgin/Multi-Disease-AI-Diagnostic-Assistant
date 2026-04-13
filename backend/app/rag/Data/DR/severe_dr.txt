@@ -1,0 +1,16 @@
+Severe diabetic retinopathy (severe NPDR) meets the "4-2-1 rule" indicating extensive retinal ischemia and high imminent risk of progression to vision-threatening proliferative disease.eyewiki+1
+Definition
+Severe non-proliferative diabetic retinopathy (ETDRS levels 47-53) fulfills the 4-2-1 rule: 4 quadrants with >20 hemorrhages/microaneurysms, OR 2 quadrants with venous beading, OR 1 quadrant with prominent intraretinal microvascular abnormalities (IRMAs). Very severe NPDR meets 2+ criteria. No neovascularization present; 50% progress to PDR within 1 year.healthline+1
+Symptoms
+Usually asymptomatic despite severe vascular compromise; rare mild blurring from macular involvement. High progression risk (>50% to PDR) mandates urgent monitoring despite normal acuity.mayoclinic+1
+Causes
+Advanced microvascular occlusion creates widespread retinal ischemia; IRMAs represent advanced arteriolar-venular shunts. VEGF upregulation nears neovascular threshold; 15+ years poor glycemic control typical.ncbi.nlm.nih
+Risk Factors
+HbA1c >9%, diabetes >15 years, uncontrolled hypertension, renal failure, anemia; type 2 patients progress faster due to cardiometabolic burden.ncbi.nlm.nih
+Diagnosis
+Dilated exam confirms 4-2-1 rule findings; ultra-widefield imaging essential for peripheral IRMAs/venous beading; FA shows extensive non-perfusion; OCT assesses macular status. 2-4 month retina specialist referral standard.mayoclinic+1
+Treatment
+Immediate retina referral; consider anti-VEGF if rapid progression/DME; panretinal photocoagulation (PRP) debated for very severe NPDR. Aggressive systemic control (HbA1c <7%, BP <130/80) critical.mayoclinic+1
+Prevention
+Intensive multifactorial therapy prevents 60% progression to PDR; fenofibrate (1.6g/day) reduces progression 30% per FIELD study; quarterly screening detects 95% severe NPDR early.ncbi.nlm.nih
+

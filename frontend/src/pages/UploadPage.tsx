@@ -3,6 +3,7 @@ import { useSearchParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Upload, FileImage, FileText, X, Loader2, Eye, EyeOff, ZoomIn, ZoomOut, Info, MapPin } from "lucide-react";
 import { api, type DiagnosisResult } from "@/lib/api";
+import { formatPercentage, normalizeProgressValue } from "@/lib/utils";
 import { useDiagnosisContext } from "@/contexts/DiagnosisContext";
 import { toast } from "@/hooks/use-toast";
 
@@ -63,6 +64,20 @@ const riskBadgeClass: Record<string, string> = {
   low: "risk-badge-low",
 };
 
+// Helper function to safely convert value to string
+const safeString = (val: any): string => {
+  if (!val) return "";
+  if (typeof val === "string") return val;
+  if (typeof val === "number") return String(val);
+  if (typeof val === "object") return JSON.stringify(val);
+  return String(val);
+};
+
+// Helper function to safely render text content
+const SafeText = ({ children }: { children: any }) => {
+  return <>{safeString(children)}</>;
+};
+
 const UploadPage = () => {
   const [searchParams] = useSearchParams();
   const diseaseId = searchParams.get("disease") || "";
@@ -114,8 +129,8 @@ const UploadPage = () => {
 
     try {
       const formData = new FormData();
-      formData.append("file", file);
-      if (reportFile) formData.append("report", reportFile);
+      formData.append("image", file);
+      if (reportFile) formData.append("report_text", reportFile);
 
       const diagnoseFn = diagnoseFns[diseaseId] || diagnoseFns.lung;
       const res = await diagnoseFn(formData);
@@ -378,9 +393,11 @@ const UploadPage = () => {
                 <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.1 }} className="glass-card p-6">
                   <h3 className="mb-4 font-display text-base font-semibold uppercase tracking-wider text-muted-foreground">Prediction</h3>
                   <div className="flex flex-wrap items-center justify-between gap-3">
-                    <span className="text-xl font-bold text-foreground sm:text-2xl">{result?.prediction}</span>
+                    <span className="text-xl font-bold text-foreground sm:text-2xl">
+                      <SafeText>{result?.prediction}</SafeText>
+                    </span>
                     <span className={`${riskBadgeClass[riskLevel] || "risk-badge-medium"} rounded-full px-4 py-1.5 text-xs font-bold uppercase`}>
-                      {riskLevel} RISK
+                      <SafeText>{riskLevel}</SafeText> RISK
                     </span>
                   </div>
                 </motion.div>
@@ -392,12 +409,14 @@ const UploadPage = () => {
                     <div className="h-3 flex-1 overflow-hidden rounded-full bg-muted">
                       <motion.div
                         initial={{ width: 0 }}
-                        animate={{ width: `${result?.confidence || 0}%` }}
+                        animate={{ width: `${normalizeProgressValue(result?.confidence)}%` }}
                         transition={{ delay: 0.4, duration: 1 }}
                         className="h-full rounded-full bg-gradient-to-r from-primary to-accent"
                       />
                     </div>
-                    <span className="text-lg font-bold text-primary">{result?.confidence?.toFixed(1)}%</span>
+                    <span className="text-lg font-bold text-primary">
+                      {formatPercentage(result?.confidence)}
+                    </span>
                   </div>
                 </motion.div>
 
@@ -409,13 +428,17 @@ const UploadPage = () => {
                       {result?.stage1_result && (
                         <motion.div initial={{ opacity: 0, x: 15 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.5 }} className="rounded-xl border border-border bg-muted/40 p-4">
                           <p className="mb-1 text-xs font-semibold uppercase tracking-wider text-primary">Stage 1 — Detection</p>
-                          <p className="text-sm font-medium text-foreground">{result.stage1_result}</p>
+                          <p className="text-sm font-medium text-foreground">
+                            <SafeText>{result.stage1_result}</SafeText>
+                          </p>
                         </motion.div>
                       )}
                       {result?.stage2_result && (
                         <motion.div initial={{ opacity: 0, x: 15 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.65 }} className="rounded-xl border border-border bg-muted/40 p-4">
                           <p className="mb-1 text-xs font-semibold uppercase tracking-wider text-primary">Stage 2 — Classification</p>
-                          <p className="text-sm font-medium text-foreground">{result.stage2_result}</p>
+                          <p className="text-sm font-medium text-foreground">
+                            <SafeText>{result.stage2_result}</SafeText>
+                          </p>
                         </motion.div>
                       )}
                     </div>
@@ -427,20 +450,28 @@ const UploadPage = () => {
                   <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.35 }} className="glass-card p-6">
                     <h3 className="mb-4 font-display text-base font-semibold uppercase tracking-wider text-muted-foreground">Class Probabilities</h3>
                     <div className="space-y-3">
-                      {Object.entries(result.class_probabilities).map(([cls, prob]) => (
-                        <div key={cls} className="flex items-center gap-3">
-                          <span className="w-24 text-sm font-medium capitalize text-foreground">{cls}</span>
-                          <div className="h-2.5 flex-1 overflow-hidden rounded-full bg-muted">
-                            <motion.div
-                              initial={{ width: 0 }}
-                              animate={{ width: `${(prob as number) * 100}%` }}
-                              transition={{ delay: 0.6, duration: 0.8 }}
-                              className="h-full rounded-full bg-gradient-to-r from-primary to-accent"
-                            />
+                      {Object.entries(result.class_probabilities).map(([cls, prob]) => {
+                        const progressValue = normalizeProgressValue(prob);
+                        const formattedPercent = formatPercentage(prob);
+                        return (
+                          <div key={cls} className="flex items-center gap-3">
+                            <span className="w-24 text-sm font-medium capitalize text-foreground">
+                              <SafeText>{cls}</SafeText>
+                            </span>
+                            <div className="h-2.5 flex-1 overflow-hidden rounded-full bg-muted">
+                              <motion.div
+                                initial={{ width: 0 }}
+                                animate={{ width: `${progressValue}%` }}
+                                transition={{ delay: 0.6, duration: 0.8 }}
+                                className="h-full rounded-full bg-gradient-to-r from-primary to-accent"
+                              />
+                            </div>
+                            <span className="w-14 text-right text-sm font-semibold text-primary">
+                              {formattedPercent}
+                            </span>
                           </div>
-                          <span className="w-14 text-right text-sm font-semibold text-primary">{((prob as number) * 100).toFixed(1)}%</span>
-                        </div>
-                      ))}
+                        );
+                      })}
                     </div>
                   </motion.div>
                 )}
@@ -451,7 +482,9 @@ const UploadPage = () => {
                     <h3 className="mb-3 flex items-center gap-2 font-display text-base font-semibold text-foreground">
                       <Info className="h-5 w-5 text-primary" /> AI Explanation
                     </h3>
-                    <p className="text-sm leading-relaxed text-muted-foreground">{result.explanation}</p>
+                    <p className="text-sm leading-relaxed text-muted-foreground">
+                      <SafeText>{result.explanation}</SafeText>
+                    </p>
                   </motion.div>
                 )}
 

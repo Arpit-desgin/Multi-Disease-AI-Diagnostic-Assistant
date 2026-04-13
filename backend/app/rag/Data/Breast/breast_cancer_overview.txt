@@ -1,0 +1,16 @@
+Breast cancer is a malignant disease where cells in the breast tissue grow uncontrollably, forming tumors that can invade nearby areas or spread to distant organs like bones, lungs, or brain.
+Definition
+Breast cancer comprises invasive adenocarcinomas primarily arising from ductal (IDC, 70-80%) or lobular epithelium (ILC, 10-15%), with subtypes including hormone receptor-positive (ER/PR+), HER2-enriched, triple-negative (TNBC), and rare forms like inflammatory breast cancer (IBC) or Paget's disease; noninvasive precursors like DCIS/LCIS precede invasion.
+Symptoms
+Common symptoms include painless lumps (upper outer quadrant), nipple retraction/discharge, skin dimpling (peau d'orange), axillary nodes, or IBC rash-like redness/swelling; advanced signs feature bone pain, jaundice, or dyspnea from metastases; early stages often asymptomatic on screening.
+Causes
+Sporadic cases (90%) stem from cumulative mutations (PIK3CA, TP53) driven by estrogen exposure, HER2 amplification, and microenvironment changes; hereditary (5-10%) involves BRCA1/2; risk amplified by dense breasts or prior radiation.
+Risk Factors
+Female sex, age >50, BRCA mutations (50-85% lifetime risk), dense breasts, nulliparity, late menopause, obesity, alcohol, HRT; protective factors include breastfeeding and oophorectomy.
+Diagnosis
+Triple assessment: mammogram (microcalcifications/masses), ultrasound/MRI, core biopsy (ER/PR/HER2/Ki-67); staging via TNM, sentinel node, PET-CT; Oncotype DX predicts recurrence.
+Treatment
+Multimodal based on stage/subtype: surgery (lumpectomy/mastectomy), radiation, chemo (taxanes), endocrine (tamoxifen/AIs), HER2-targeted (trastuzumab), CDK4/6 inhibitors, PARP (olaparib BRCA+), immunotherapy (pembrolizumab TNBC).
+Prevention
+Screening (mammograms 40+), risk-reducing surgery (BRCA), chemoprevention (tamoxifen high-risk), lifestyle (limit alcohol, exercise); early detection achieves 99% stage I survival.
+

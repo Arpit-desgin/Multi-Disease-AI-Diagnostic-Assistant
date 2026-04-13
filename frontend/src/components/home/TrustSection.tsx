@@ -4,7 +4,7 @@ import { Lock, Eye, UserCheck, ShieldCheck } from "lucide-react";
 const items = [
   { icon: Lock, title: "Data Privacy", desc: "Your medical data is encrypted end-to-end and never shared with third parties." },
   { icon: Eye, title: "Explainable AI", desc: "See exactly how the AI reaches its conclusions with visual heatmaps and confidence scores." },
-  { icon: UserCheck, title: "Not a Replacement for Doctors", desc: "MediAI is a screening assistant. Always consult a qualified healthcare professional." },
+  { icon: UserCheck, title: "Not a Replacement for Doctors", desc: "MedIntel is a screening assistant. Always consult a qualified healthcare professional." },
   { icon: ShieldCheck, title: "Secure & Confidential", desc: "HIPAA-aligned practices with enterprise-grade security and audit logging." },
 ];
 

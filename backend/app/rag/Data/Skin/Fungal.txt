@@ -1,0 +1,16 @@
+Fungal infections (mycoses) are diseases caused by fungi invading skin, nails, hair, lungs, or mucous membranes, ranging from superficial rashes to life-threatening systemic illness in immunocompromised patients.
+Definition
+Fungal infections, or mycoses, occur when pathogenic fungi like dermatophytes, yeasts (Candida), or molds (Aspergillus) invade human tissues, classified as superficial (skin/nails), subcutaneous (sporotrichosis), or systemic/opportunistic (histoplasmosis, cryptococcosis). They thrive in warm/moist environments, disrupting barriers or immunity; common examples include tinea (ringworm), candidiasis, and pneumocystis pneumonia in AIDS patients.
+Symptoms
+Symptoms vary by type: superficial infections cause itchy red ring-shaped rashes (tinea), white patches/thrush (oral candidiasis), thickened/discolored nails (onychomycosis), or moist intertrigo. Systemic forms present fever, cough/hemoptysis (aspergillosis), weight loss/night sweats (histoplasmosis), or meningitis signs (cryptococcosis); subcutaneous lesions form nodules/ulcers along lymphatics (sporotrichosis).
+Causes
+Fungi cause infections via direct contact (dermatophytes from soil/animals), inhalation (Histoplasma from bat guano), endogenous overgrowth (Candida in diabetics/antibiotic users), or implantation (Sporothrix via thorn pricks). Pathogenesis involves fungal enzymes degrading tissues, toxins, or immune evasion; opportunistic species exploit neutropenia, HIV, transplants, or corticosteroids.
+Risk Factors
+Major risk factors include weakened immunity (HIV/AIDS, chemotherapy, transplants), diabetes, prolonged antibiotics/steroids, warm/humid climates, crowded living, poor hygiene, and occupations like farming/mining (inhalation exposure). Age extremes (infants/elderly), obesity (skin folds), and travel to endemic areas (valley fever in Southwest US) heighten susceptibility.
+Diagnosis
+Diagnosis combines microscopy (KOH prep showing hyphae/spores), culture (Sabouraud agar), histopathology (GMS/PAS stains), and antigen/antibody tests (cryptococcal antigen). Imaging (chest CT for aspergilloma), biopsy (for deep invasion), PCR/molecular ID, and skin scrapings confirm; differentiate from bacterial/viral via clinical pattern.
+Treatment
+Treatment matches site/severity: topical azoles/allylamines (clotrimazole, terbinafine) for skin/nails; oral fluconazole/itraconazole for mucosal/mild systemic; IV amphotericin B, echinocandins (caspofungin), or voriconazole for severe/opportunistic (aspergillosis). Duration varies (weeks for nails, months for systemic); resistance prompts combination therapy/surgery (e.g., aspergilloma resection).
+Prevention
+Prevention includes keeping skin dry/clean (powders for folds), wearing breathable shoes, avoiding shared towels/combs, treating diabetes promptly, and antifungal prophylaxis (fluconazole in neutropenics). Respiratory protection in endemic areas, hand hygiene, and early HIV management reduce systemic risk; vaccines under development for candida/cryptococcus.
+

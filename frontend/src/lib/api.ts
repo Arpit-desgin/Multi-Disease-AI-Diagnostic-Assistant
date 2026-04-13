@@ -1,4 +1,5 @@
 const API_BASE = import.meta.env.VITE_API_URL || "http://localhost:8000/api/v1";
+const API_CHATBOT_BASE = import.meta.env.VITE_API_URL?.replace("/v1", "") || "http://localhost:8000/api";
 
 async function handleResponse<T>(response: Response): Promise<T> {
   if (!response.ok) {
@@ -31,33 +32,38 @@ export const api = {
       body: JSON.stringify(data),
     }).then((r) => handleResponse<RiskResult>(r)),
 
-  // Diagnosis
+  // Diagnosis — FormData only, no Content-Type header
   diagnoseLung: (formData: FormData) =>
-    fetch(`${API_BASE}/diagnosis/lung-cancer`, { method: "POST", body: formData }).then((r) =>
-      handleResponse<DiagnosisResult>(r)
-    ),
+    fetch(`${API_BASE}/diagnosis/lung-cancer`, {
+      method: "POST",
+      body: formData,
+    }).then((r) => handleResponse<DiagnosisResult>(r)),
 
   diagnoseSkin: (formData: FormData) =>
-    fetch(`${API_BASE}/diagnosis/skin-disease`, { method: "POST", body: formData }).then((r) =>
-      handleResponse<DiagnosisResult>(r)
-    ),
+    fetch(`${API_BASE}/diagnosis/skin-disease`, {
+      method: "POST",
+      body: formData,
+    }).then((r) => handleResponse<DiagnosisResult>(r)),
 
   diagnoseDR: (formData: FormData) =>
-    fetch(`${API_BASE}/diagnosis/diabetic-retinopathy`, { method: "POST", body: formData }).then((r) =>
-      handleResponse<DiagnosisResult>(r)
-    ),
+    fetch(`${API_BASE}/diagnosis/diabetic-retinopathy`, {
+      method: "POST",
+      body: formData,
+    }).then((r) => handleResponse<DiagnosisResult>(r)),
 
-  // Grad-CAM (separate endpoint, not full diagnosis)
+  // Grad-CAM — FormData only, no Content-Type header
   gradcam: (formData: FormData) =>
-    fetch(`${API_BASE}/diagnosis/gradcam`, { method: "POST", body: formData }).then((r) =>
-      handleResponse<GradcamResult>(r)
-    ),
+    fetch(`${API_BASE}/diagnosis/gradcam`, {
+      method: "POST",
+      body: formData,
+    }).then((r) => handleResponse<GradcamResult>(r)),
 
-  // Report explanation
+  // Report
   explainReport: (formData: FormData) =>
-    fetch(`${API_BASE}/report/explain`, { method: "POST", body: formData }).then((r) =>
-      handleResponse<ReportExplanation>(r)
-    ),
+    fetch(`${API_BASE}/report/explain`, {
+      method: "POST",
+      body: formData,
+    }).then((r) => handleResponse<ReportExplanation>(r)),
 
   // Hospitals
   hospitalsNearby: (lat: number, lon: number, disease: string) =>
@@ -70,21 +76,21 @@ export const api = {
       handleResponse<Hospital[]>(r)
     ),
 
-  // Chatbot
-  chat: (data: { message: string; session_id: string; diagnosis_context?: DiagnosisContext | null }) =>
-    fetch(`${API_BASE}/chatbot/message`, {
+  // Chatbot — Uses /api/chatbot prefix (not /api/v1)
+  chat: (data: { message: string; session_id: string; diagnosis_context?: ActiveDiagnosis | null }) =>
+    fetch(`${API_CHATBOT_BASE}/chatbot/message`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
     }).then((r) => handleResponse<ChatResponse>(r)),
 
   clearChat: (sessionId: string) =>
-    fetch(`${API_BASE}/chatbot/session/${sessionId}`, { method: "DELETE" }).then((r) =>
+    fetch(`${API_CHATBOT_BASE}/chatbot/session/${sessionId}`, { method: "DELETE" }).then((r) =>
       handleResponse<{ success: boolean }>(r)
     ),
 };
 
-// Types
+// ─── Types ────────────────────────────────────────────────────────────────────
 
 export type RiskResult = {
   risk_level: "low" | "medium" | "high";
@@ -93,57 +99,49 @@ export type RiskResult = {
   score?: number;
 };
 
+/** Raw stage result returned by skin/DR endpoints – can be a string or {label, confidence} */
+export type StageResult = string | { label: string; confidence?: number } | null;
+
 export type DiagnosisResult = {
-  prediction: string;
-  confidence: number;
-  risk_level: string; // "HIGH" | "MODERATE" | "LOW"
-  gradcam_image?: string; // base64 string
-  stage1_result?: string | null;
-  stage2_result?: string | null;
+  mock?: boolean;
+  prediction?: string;
+  confidence?: number;
+  risk_level?: string;
+  stage1_result?: StageResult;
+  stage2_result?: StageResult;
   class_probabilities?: Record<string, number>;
   explanation?: string;
+  gradcam_image?: string;
+  gradcam_regions?: Array<{ x: number; y: number; width: number; height: number; score: number }>;
 };
 
 export type GradcamResult = {
-  gradcam_image: string; // base64 string
+  gradcam_image: string;
 };
 
 export type ReportExplanation = {
-  summary: string;
-  key_findings: string[];
-  questions_for_doctor: string[];
-  urgency_indicator: "green" | "yellow" | "red";
-  disclaimer: string;
-  // Legacy fields for fallback
-  original?: string;
-  simplified?: string;
-  keywords?: { term: string; explanation: string }[];
-  correlation?: string;
+  explanation: string;
 };
 
 export type Hospital = {
+  id: string;
   name: string;
-  speciality: string;
-  distance: string;
+  distance: number;
+  city: string;
+  state: string;
   rating: number;
-  phone: string;
-  hours: string;
-  address: string;
-  maps_url?: string;
-  lat?: number;
-  lon?: number;
-};
-
-export type DiagnosisContext = {
-  disease: string;
-  prediction: string;
-  confidence: number;
-  risk_level: string;
 };
 
 export type ChatResponse = {
-  reply: string;
+  message: string;
   session_id: string;
-  suggested_questions?: string[];
-  disclaimer?: string;
 };
+
+/** What we persist in global context for the chatbot */
+export type ActiveDiagnosis = {
+  prediction: string;
+  confidence: number;
+};
+
+/** Legacy alias kept for DiagnosisContext */
+export type DiagnosisContext = ActiveDiagnosis;

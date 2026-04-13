@@ -1,12 +1,39 @@
 from fastapi import APIRouter, Body, Request
 import logging
+from typing import Optional, List, Dict, Any
+from pydantic import BaseModel
 
 from app.rate_limiter import limiter
 from app.services.chatbot_service import clear_session, medical_chat
 from app.utils.file_utils import sanitize_string
 
 logger = logging.getLogger("app.chatbot_route")
-router = APIRouter(prefix="/chatbot")
+router = APIRouter()
+
+
+# Request/Response schemas for RAG chatbot
+class RAGChatRequest(BaseModel):
+    """Schema for RAG-based chat request."""
+    question: str
+    disease_type: Optional[str] = None
+
+
+class SourceMetadata(BaseModel):
+    """Schema for source document metadata."""
+    id: str
+    collection: str
+    source_file: str
+    relevance_score: float
+    preview: str
+
+
+class RAGChatResponse(BaseModel):
+    """Schema for RAG-based chat response."""
+    answer: str
+    sources: List[SourceMetadata]
+    retrieved_count: int
+    model: str
+    error: Optional[str] = None
 
 
 @router.post("/message")
@@ -48,4 +75,94 @@ async def chatbot_clear_session(session_id: str):
     clear_session(session_id)
     logger.info(f"[ROUTE] Session cleared: {session_id}")
     return {"session_id": session_id, "cleared": True}
+
+
+@router.post("/chat", response_model=RAGChatResponse)
+@limiter.limit("20/minute")
+async def rag_chat(
+    request: Request,
+    chat_request: RAGChatRequest
+):
+    """
+    Local RAG-based chatbot endpoint using fully offline processing.
+    
+    Returns medical answers grounded in retrieved context with source attribution.
+    Uses local SentenceTransformer embeddings - NO external API keys required.
+    
+    - Rate limited to 20/minute per IP
+    - Fully offline operation (no OpenAI API calls)
+    - Uses ChromaDB vector database and local embeddings
+    
+    Args:
+        question: Medical question to answer
+        disease_type: Optional disease type filter 
+                     (dermatology, lung_cancer, breast_cancer, 
+                      diabetic_retinopathy, general_diseases)
+    
+    Returns:
+        RAGChatResponse with answer, sources, and metadata
+    """
+    logger.info(f"[ROUTE] Local RAG Chat Request - Question: {chat_request.question[:100]}, Disease: {chat_request.disease_type}")
+    
+    try:
+        # Use cached RAG pipeline from chatbot service (loaded once at startup)
+        from app.services.chatbot_service import _get_rag_pipeline
+        
+        pipeline = _get_rag_pipeline()
+        if pipeline is None:
+            logger.error("[ROUTE] RAG Pipeline not available")
+            return RAGChatResponse(
+                answer="",
+                sources=[],
+                retrieved_count=0,
+                model="local",
+                error="RAG system unavailable. The medical knowledge base could not be loaded."
+            )
+        
+        logger.debug("[ROUTE] Using cached RAG pipeline instance")
+        
+        # Generate answer using local processing only
+        result = pipeline.generate_answer(
+            query=chat_request.question,
+            disease_type=chat_request.disease_type,
+            top_k=5
+        )
+        
+        # Convert sources to SourceMetadata objects
+        sources = [
+            SourceMetadata(
+                id=source["id"],
+                collection=source["collection"],
+                source_file=source["source_file"],
+                relevance_score=source["relevance_score"],
+                preview=source["preview"]
+            )
+            for source in result.get("sources", [])
+        ]
+        
+        # Build response
+        response = RAGChatResponse(
+            answer=result.get("answer", ""),
+            sources=sources,
+            retrieved_count=result.get("retrieved_count", 0),
+            model=result.get("model", "local"),
+            error=result.get("error")
+        )
+        
+        logger.info(
+            f"[ROUTE] ✅ Local RAG Chat Success - Answer length: {len(response.answer)}, "
+            f"Sources: {len(response.sources)}, Retrieved: {response.retrieved_count}"
+        )
+        
+        return response
+    
+    except Exception as e:
+        logger.error(f"[ROUTE] Local RAG Chat Error: {str(e)}", exc_info=True)
+        return RAGChatResponse(
+            answer="",
+            sources=[],
+            retrieved_count=0,
+            model="local",
+            error=f"Error generating response: {str(e)}"
+        )
 

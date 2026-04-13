@@ -1,0 +1,16 @@
+Moderate diabetic retinopathy (moderate NPDR) features more extensive retinal vascular damage than mild NPDR, with multiple hemorrhages and exudates signaling higher progression risk.
+Definition
+Moderate non-proliferative diabetic retinopathy (ETDRS level 40-43) shows >20 intraretinal hemorrhages/microaneurysms per quadrant in 1-3 quadrants, plus cotton-wool spots, hard exudates, and mild venous beading, but without the 4-2-1 rule defining severe NPDR. Retinal ischemia worsens, increasing VEGF production without neovascularization.eyewiki+1
+Symptoms
+Typically asymptomatic with normal visual acuity; occasional mild blurring from macular exudates. No field defects or color vision loss; progression risk (26% to PDR in 1 year) drives monitoring urgency despite lack of symptoms.mayoclinic+1
+Causes
+Cumulative hyperglycemia causes widespread pericyte loss, capillary closure, and increased vascular permeability; cotton-wool spots reflect nerve fiber infarcts from arteriolar occlusion. 10-15 years diabetes duration typical; nephropathy accelerates onset.clevelandclinic+1
+Risk Factors
+HbA1c >8%, diabetes >10 years, hypertension, hyperlipidemia, poor compliance; type 2 patients often progress faster due to metabolic syndrome components.ncbi.nlm.nih+1
+Diagnosis
+Dilated exam reveals moderate hemorrhages (dot/blot), 2-5 cotton-wool spots/eye, scattered hard exudates; OCT may show early macular thickening; ultra-widefield preferred for peripheral ischemia. 6-month screening intervals recommended.mayoclinic+1
+Treatment
+No laser/anti-VEGF indicated; intensive systemic control (HbA1c <7%, BP <130/80) slows progression 50-70%. Emerging data (Protocol W) suggests anti-VEGF consideration if rapid worsening or high-risk features.ncbi.nlm.nih+1
+Prevention
+Tight multifactorial control prevents 60% moderate NPDR progression; quarterly HbA1c/BP monitoring, ACE inhibitors, statins essential; patient education prevents 80% vision-threatening complications.mayoclinic+1
+

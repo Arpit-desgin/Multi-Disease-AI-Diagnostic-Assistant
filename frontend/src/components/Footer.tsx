@@ -11,7 +11,7 @@ const Footer = () => (
               <Activity className="h-5 w-5 text-primary-foreground" />
             </div>
             <span className="font-display text-lg font-bold tracking-tight text-foreground">
-              Medi<span className="gradient-text">AI</span>
+              Med<span className="gradient-text">Intel</span>
             </span>
           </Link>
           <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
@@ -51,7 +51,7 @@ const Footer = () => (
 
       <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 md:flex-row">
         <p className="text-xs text-muted-foreground">
-          © 2026 MediAI. This tool is for educational purposes and does not replace professional medical advice.
+          © 2026 MedIntel. This tool is for educational purposes and does not replace professional medical advice.
         </p>
         <p className="flex items-center gap-1 text-xs text-muted-foreground">
           Made with <Heart className="h-3 w-3 text-destructive" /> for better healthcare

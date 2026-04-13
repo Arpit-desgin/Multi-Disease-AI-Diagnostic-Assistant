@@ -3,11 +3,9 @@ from __future__ import annotations
 import json
 import logging
 from typing import Any, Dict, List
-import httpx
 import asyncio
-
-from app.config import settings
-
+import sys
+from pathlib import Path
 
 logger = logging.getLogger("app.chatbot_service")
 
@@ -17,6 +15,39 @@ _MAX_HISTORY = 10
 
 # In-memory request deduplication: prevents concurrent duplicate calls for same session
 _session_locks: Dict[str, asyncio.Lock] = {}
+
+# Global RAG pipeline instance (loaded once, reused for all requests)
+_rag_pipeline = None
+
+
+def _get_rag_pipeline():
+    """
+    Lazy load local RAG pipeline once on first use.
+    This ensures the vector index is loaded only once, not per request.
+    
+    Uses fully local embeddings (SentenceTransformer) - NO API keys required.
+    """
+    global _rag_pipeline
+    
+    if _rag_pipeline is None:
+        try:
+            # Add rag module to path
+            rag_module_path = Path(__file__).parent.parent / "rag"
+            if str(rag_module_path) not in sys.path:
+                sys.path.insert(0, str(rag_module_path))
+            
+            from rag_pipeline import RAGPipeline
+            
+            # Initialize local RAG pipeline (no API key needed)
+            _rag_pipeline = RAGPipeline()
+            logger.info("[RAG] ✅ RAG pipeline loaded successfully")
+            logger.info("[RAG] Using local embeddings (sentence-transformers: all-MiniLM-L6-v2)")
+            logger.info("[RAG] Fully offline operation - no external API calls")
+        except Exception as e:
+            logger.error(f"[RAG] Failed to load RAG pipeline: {str(e)}", exc_info=True)
+            _rag_pipeline = None
+    
+    return _rag_pipeline
 
 
 def _get_history(session_id: str) -> List[Dict[str, str]]:
@@ -35,83 +66,64 @@ def clear_session(session_id: str) -> None:
     _sessions.pop(session_id, None)
 
 
-def _gemini_chat_via_rest(prompt: str) -> tuple[str, bool]:
+def _rag_chat(prompt: str, user_message: str, diagnosis_context: Dict[str, Any] | None = None) -> tuple[str, bool]:
     """
-    Call Gemini API via REST - MAX 1 CALL, NO RETRIES.
+    Call local RAG pipeline for medical question answering.
+    
+    Uses fully local, offline processing with SentenceTransformer embeddings.
+    No API keys required - runs completely locally.
     
     Returns:
         tuple: (response_text, is_fallback)
-            - response_text: Generated response or fallback message
-            - is_fallback: True if using fallback due to 429 or error
+            - response_text: Generated response from RAG or fallback message
+            - is_fallback: True if using fallback due to error
     """
-    if not settings.GEMINI_API_KEY:
-        raise ValueError("GEMINI_API_KEY is required")
-    
-    api_url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent"
-    
-    headers = {
-        "Content-Type": "application/json",
-    }
-    
-    payload = {
-        "contents": [
-            {
-                "parts": [
-                    {"text": prompt}
-                ]
-            }
-        ],
-        "safetySettings": [
-            {
-                "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
-                "threshold": "BLOCK_NONE"
-            }
-        ]
-    }
-    
-    logger.info(f"[GEMINI API] Calling Gemini API - attempt 1 of 1 (NO RETRIES)")
-    
     try:
-        response = httpx.post(
-            f"{api_url}?key={settings.GEMINI_API_KEY}",
-            json=payload,
-            headers=headers,
-            timeout=30.0
+        pipeline = _get_rag_pipeline()
+        
+        if pipeline is None:
+            logger.error("[RAG] RAG pipeline not initialized")
+            return _get_error_response(), True
+        
+        # Extract disease type hint from user message (optional)
+        disease_type = None
+        message_lower = user_message.lower()
+        if any(term in message_lower for term in ["skin", "dermatology", "mark", "mole", "lesion", "bcc", "melanoma", "eczema"]):
+            disease_type = "dermatology"
+        elif any(term in message_lower for term in ["lung", "respiratory", "breathing", "cancer"]):
+            disease_type = "lung_cancer"
+        elif any(term in message_lower for term in ["breast", "mammogram"]):
+            disease_type = "breast_cancer"
+        elif any(term in message_lower for term in ["dr", "retinopathy", "diabetic", "eye"]):
+            disease_type = "diabetic_retinopathy"
+        
+        # Generate answer using local RAG (no API calls)
+        logger.info(f"[RAG] Querying local RAG - question: {user_message[:100]}, disease_type: {disease_type}")
+        
+        result = pipeline.generate_answer(
+            query=user_message,
+            disease_type=disease_type,
+            top_k=5
         )
         
-        # ❌ HANDLE 429 - Return fallback instead of retrying
-        if response.status_code == 429:
-            logger.warning(f"[GEMINI API] Rate limit hit (429) - returning fallback response (NO RETRY)")
-            return _get_fallback_response(), True
+        if result.get("error"):
+            logger.error(f"[RAG] RAG generation error: {result['error']}")
+            return _get_error_response(), True
         
-        response.raise_for_status()
-        data = response.json()
+        answer = result.get("answer", "")
+        model_used = result.get("model", "unknown")
         
-        # Extract text from response
-        if "candidates" in data and len(data["candidates"]) > 0:
-            candidate = data["candidates"][0]
-            if "content" in candidate and "parts" in candidate["content"]:
-                for part in candidate["content"]["parts"]:
-                    if "text" in part:
-                        text = part["text"].strip()
-                        logger.info(f"[GEMINI API] ✅ Success - response length: {len(text)} chars")
-                        return text, False
+        if not answer:
+            logger.error("[RAG] Empty answer from RAG pipeline")
+            return _get_error_response(), True
         
-        logger.error(f"[GEMINI API] Unexpected response format: {data}")
-        return _get_error_response(), True
-        
-    except httpx.HTTPStatusError as e:
-        # ❌ Explicit 429 handling - NO RETRY
-        if e.response.status_code == 429:
-            logger.warning(f"[GEMINI API] Rate limit (429) - returning fallback (NO RETRY)")
-            return _get_fallback_response(), True
-        
-        logger.error(f"[GEMINI API] ❌ API error {e.response.status_code}: {e.response.text[:200]}")
-        return _get_error_response(), True
-        
+        logger.info(f"[RAG] ✅ Success - Model: {model_used}, Response length: {len(answer)} chars")
+        return answer, False
+    
     except Exception as e:
-        logger.error(f"[GEMINI API] ❌ Request failed: {str(e)[:200]}")
+        logger.error(f"[RAG] ❌ Local RAG request failed: {str(e)[:200]}", exc_info=True)
         return _get_error_response(), True
+
 
 
 def _get_fallback_response() -> str:
@@ -134,10 +146,10 @@ def _get_fallback_response() -> str:
 
 
 def _get_error_response() -> str:
-    """Return a helpful error response when API call fails."""
+    """Return a helpful error response when RAG processing fails."""
     return (
-        "I'm having trouble connecting to the AI service right now. "
-        "This may be temporary. Please try again in a moment.\n\n"
+        "I'm having trouble retrieving medical information from the local database right now. "
+        "This may be a temporary issue. Please try again in a moment.\n\n"
         "In the meantime, please consult a qualified doctor for medical decisions."
     )
 
@@ -195,10 +207,10 @@ async def medical_chat(
     diagnosis_context: Dict[str, Any] | None = None,
 ) -> Dict[str, Any]:
     """
-    Process medical chat with deduplication and single API call.
+    Process medical chat with RAG pipeline.
     
     Uses asyncio.Lock to prevent concurrent duplicate calls for the same session.
-    Ensures only ONE Gemini API call per user message.
+    Ensures only ONE RAG query per user message.
     """
     logger.info(f"[CHAT] Medical chat request - session_id: {session_id}, message_len: {len(user_message)}")
     
@@ -227,8 +239,8 @@ async def medical_chat(
             prompt
         )
         
-        # ✅ Single API call (no retries, no loops)
-        text, is_fallback = _gemini_chat_via_rest(full_prompt)
+        # ✅ Single RAG query (using vector search + LLM)
+        text, is_fallback = _rag_chat(full_prompt, user_message, diagnosis_context)
         
         if is_fallback:
             logger.warning(f"[CHAT] Using fallback response for session {session_id}")
@@ -243,4 +255,5 @@ async def medical_chat(
             "disclaimer": "AI support tool, not medical diagnosis.",
             "is_fallback": is_fallback,  # Flag client to show warning if fallback
         }
+
 

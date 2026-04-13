@@ -33,46 +33,69 @@ app = FastAPI(
     version="1.0.0",
 )
 
-# Log startup info
-logger.info(f"🚀 ALLOWED_ORIGINS configured: {settings.ALLOWED_ORIGINS}")
-logger.info(f"Frontend running on: http://localhost:8080")
-logger.info(f"Backend running on: http://localhost:8000")
-logger.info(f"Chatbot endpoint: POST http://localhost:8000/api/v1/chatbot/message")
+# ============================================================================
+# CRITICAL: Add CORS Middleware FIRST (before all other middleware)
+# ============================================================================
+logger.info("🚀 =================== MedIntel API Starting ===================")
+logger.info("🌐 CORS Configuration:")
+cors_origins = settings.ALLOWED_ORIGINS or ["http://localhost:8080"]
+logger.info(f"   Allowed origins: {cors_origins}")
+logger.info("   Credentials: enabled")
+logger.info("   Methods: *")
+logger.info("   Headers: *")
+logger.info("   Max-Age: 3600")
 
-# Middleware to handle CORS preflight without rate limiting
-class HandleOptionRequests(BaseHTTPMiddleware):
-    async def dispatch(self, request: Request, call_next):
-        if request.method == "OPTIONS":
-            origin = request.headers.get("Origin", "*")
-            logger.info(f"CORS preflight request from origin: {origin}")
-            return JSONResponse(
-                content={},
-                status_code=200,
-                headers={
-                    "Access-Control-Allow-Origin": origin,
-                    "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS, HEAD",
-                    "Access-Control-Allow-Headers": "Content-Type, Authorization, X-Requested-With",
-                    "Access-Control-Max-Age": "3600",
-                    "Access-Control-Allow-Credentials": "true",
-                },
-            )
-        return await call_next(request)
-
-
-# CORS (add FIRST so it runs OUTERMOST)
-logger.info(f"Configuring CORSMiddleware with origins: {settings.ALLOWED_ORIGINS}")
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=settings.ALLOWED_ORIGINS or ["http://localhost:8080"],
+    allow_origins=cors_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
+    max_age=3600,
 )
 
-# Handle OPTIONS before rate limiter (add SECOND)
-app.add_middleware(HandleOptionRequests)
+logger.info("\n🌍 Frontend URL: http://localhost:8080")
+logger.info("🔧 Backend URL: http://localhost:8000")
+logger.info("\n📋 Available Endpoints:")
+logger.info("   Diagnosis:")
+logger.info("      - Lung Cancer: POST /api/v1/diagnosis/lung-cancer")
+logger.info("      - Skin Disease: POST /api/v1/diagnosis/skin-disease")
+logger.info("      - Diabetic Retinopathy: POST /api/v1/diagnosis/diabetic-retinopathy")
+logger.info("   Chatbot:")
+logger.info("      - Message: POST /api/chatbot/message")
+logger.info("      - RAG Chat: POST /api/chatbot/chat")
+logger.info("      - Clear Session: DELETE /api/chatbot/session/{session_id}")
+logger.info("   Health:")
+logger.info("      - Health Check: GET /health")
+logger.info("      - Readiness: GET /ready")
+logger.info("      - Models Status: GET /api/v1/models/status")
+logger.info("\n🐛 Debug Endpoints:")
+logger.info("   - Config: GET /api/v1/debug/config")
+logger.info("   - CORS Test: GET /api/v1/debug/cors-test")
+logger.info("\n✅ API Ready!\n")
 
-# Rate limiting (add THIRD so it runs after OPTIONS handling)
+
+@app.on_event("startup")
+async def startup_event():
+    """Initialize RAG pipeline and other services on startup."""
+    logger.info("[STARTUP] Initializing services...")
+    try:
+        from app.services.chatbot_service import _get_rag_pipeline
+        try:
+            pipeline = _get_rag_pipeline()
+            if pipeline:
+                logger.info("[STARTUP] ✅ RAG pipeline ready (will use cached instance)")
+            else:
+                logger.warning("[STARTUP] ⚠️  RAG pipeline not available")
+        except Exception as e:
+            logger.error(f"[STARTUP] ⚠️  RAG pipeline initialization skipped: {str(e)}", exc_info=False)
+    except Exception as e:
+        logger.error(f"[STARTUP] ❌ Startup error: {str(e)}", exc_info=True)
+
+
+# ============================================================================
+# Rate limiting middleware (add AFTER CORS)
+# ============================================================================
 app.state.limiter = limiter
 app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
 app.add_middleware(SlowAPIMiddleware)
@@ -83,7 +106,7 @@ async def add_security_headers_and_logging(request: Request, call_next):
     start = time.time()
     try:
         response = await call_next(request)
-    except Exception as exc:  # pragma: no cover
+    except Exception as exc:
         logger.error("Unhandled exception: %s %s - %s", request.method, request.url.path, exc)
         return JSONResponse(status_code=500, content={"error": "Internal server error"})
 
@@ -99,7 +122,6 @@ async def add_security_headers_and_logging(request: Request, call_next):
     else:
         logger.info("Request: %s", log_data)
 
-    # Security headers
     response.headers["X-Content-Type-Options"] = "nosniff"
     response.headers["X-Frame-Options"] = "DENY"
     response.headers["X-XSS-Protection"] = "1; mode=block"
@@ -139,23 +161,8 @@ app.include_router(diagnosis.router, prefix="/api/v1", tags=["diagnosis"])
 app.include_router(risk.router, prefix="/api/v1", tags=["risk"])
 app.include_router(report.router, prefix="/api/v1", tags=["report"])
 app.include_router(hospitals.router, prefix="/api/v1", tags=["hospitals"])
-app.include_router(chatbot.router, prefix="/api/v1", tags=["chatbot"])
+app.include_router(chatbot.router, prefix="/api/chatbot", tags=["chatbot"])
 app.include_router(health.router, prefix="/api/v1", tags=["health"])
-
-
-# Explicit OPTIONS handler for all routes (bypasses rate limiting)
-@app.options("/{full_path:path}")
-async def preflight_handler(full_path: str):
-    return JSONResponse(
-        status_code=200,
-        content={},
-        headers={
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS, PATCH",
-            "Access-Control-Allow-Headers": "Content-Type, Authorization",
-            "Access-Control-Max-Age": "3600",
-        }
-    )
 
 
 @app.get("/health")
@@ -165,7 +172,6 @@ async def health():
 
 @app.get("/ready")
 async def readiness():
-    # DB check
     db_ok = True
     try:
         async with engine.begin() as conn:
@@ -175,8 +181,6 @@ async def readiness():
         db_ok = False
 
     models = get_model_status()
-
-    # App is ready even without DB (DB is optional)
     status_code = 200
     return JSONResponse(
         status_code=status_code,
@@ -190,3 +194,32 @@ async def readiness():
 @app.get("/api/v1/models/status")
 async def models_status():
     return get_model_status()
+
+
+@app.get("/api/v1/debug/config")
+async def debug_config():
+    return {
+        "api": {
+            "title": app.title,
+            "version": app.version,
+            "description": app.description
+        },
+        "cors": {
+            "allowed_origins": settings.ALLOWED_ORIGINS,
+            "allow_credentials": True,
+            "allow_methods": ["*"],
+            "allow_headers": ["*"]
+        },
+        "ml_models": get_model_status(),
+        "frontend_url": "http://localhost:8080",
+        "backend_url": "http://localhost:8000"
+    }
+
+
+@app.get("/api/v1/debug/cors-test")
+async def cors_test(request: Request):
+    return {
+        "cors_status": "OK",
+        "origin": request.headers.get("origin", "No origin header"),
+        "allowed": True
+    }

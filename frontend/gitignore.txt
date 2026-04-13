@@ -1,4 +1,3 @@
-# Logs
 logs
 *.log
 npm-debug.log*
@@ -8,6 +7,7 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
+frontend/node_modules
 dist
 dist-ssr
 *.local
@@ -22,3 +22,20 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+
+# virtual environments
+venv/
+venv311/
+env/
+.venv/
+backend/.venv/
+
+# backend
+backend/venv311/
+backend/chroma_data/
+backend/.env
+
+# also safe
+**/venv*/
+**/.env

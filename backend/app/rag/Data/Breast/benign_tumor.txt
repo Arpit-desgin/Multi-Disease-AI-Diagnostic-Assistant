@@ -1,0 +1,16 @@
+Benign breast tumors are non-cancerous growths in breast tissue that do not spread and rarely become malignant, often presenting as lumps but not requiring aggressive treatment.
+Definition
+Benign breast tumors encompass non-malignant growths like fibroadenomas (solid, rubbery masses of glandular/fibrous tissue), cysts (fluid-filled sacs), intraductal papillomas (wart-like growths in milk ducts), and phyllodes tumors (leaf-like connective tissue tumors, mostly benign). Unlike breast cancer, they lack invasive potential and atypical cells, though some (e.g., complex sclerosing lesions) slightly elevate future cancer risk; fibroadenomas are most common in women 15-35 years old.clevelandclinic+1
+Symptoms
+Symptoms typically include painless, smooth, mobile lumps (fibroadenomas feel firm/round), tender fluctuant masses (cysts, worse premenstrually), nipple discharge (papillomas), or rapid-growing lumps (phyllodes). No skin changes/dimpling like cancer; cysts may fluctuate in size; most asymptomatic and found incidentally on exam/imaging; pain rare unless traumatized/infected.cancer.stonybrookmedicine+1
+Causes
+Benign tumors arise from hormonal influences (estrogen drives fibroadenoma/cyst growth during reproductive years/pregnancy), fibrous glandular overgrowth, or ductal epithelial proliferation without malignant transformation. Trauma/fat necrosis forms scar-like lumps; no clear genetic cause like BRCA in cancer; fibrocystic changes link to normal cycling hormones.cancer+1
+Risk Factors
+Risk factors include reproductive age (15-35 for fibroadenomas), hormonal therapy/pregnancy (growth stimulation), family history of benign disease, caffeine/excess fat intake (fibrocystic symptoms), and prior biopsy showing proliferative changes (4x cancer risk increase). No tobacco/alcohol link like cancer; African-American women have higher fibroadenoma rates.komen+1
+Diagnosis
+Diagnosis uses triple assessment: clinical exam (mobile vs. fixed), imaging (ultrasound distinguishes solid/cystic, mammogram for older women), and core biopsy (rules out atypia/malignancy). MRI for equivocal lesions; ductography for discharge; follow serial imaging for simple cases; phyllodes confirmed histologically post-excision.pmc.ncbi.nlm.nih+1
+Treatment
+Treatment often conservative (observation/ultrasound follow-up for small/stable fibroadenomas/cysts); aspiration for symptomatic cysts; surgical excision for large (>3cm)/growing/painful lesions, diagnostic uncertainty, or patient preference. No chemo/radiation; phyllodes requires wide excision; recurrence low (10-15%).teachmesurgery+1
+Prevention
+Prevention focuses on lifestyle (reduce caffeine/fat for fibrocystic symptoms, maintain healthy weight), prompt evaluation of lumps, and regular self-exams/mammograms (age 40+). No proven method eliminates risk; hormonal birth control may reduce fibroadenomas; breastfeeding potentially protective.mayoclinichealthsystem+1
+

@@ -1,0 +1,16 @@
+Warts are benign skin growths caused by human papillomavirus (HPV) infection, commonly appearing on hands, feet, or genitals and often resolving spontaneously but treatable for faster clearance.
+Definition
+Warts are small, rough, benign skin growths caused by human papillomavirus (HPV) infection of keratinocytes, leading to epidermal hyperplasia and hyperkeratosis. Over 100 HPV types cause distinct forms: common (verruca vulgaris on hands), plantar (feet), flat (face/legs), filiform (face), and genital (condyloma acuminata); they spread via contact and may persist 1-2 years before immune clearance.
+Symptoms
+Symptoms include firm, rough-surfaced papules with black dots (thrombosed capillaries), often painless but tender on pressure (plantar warts); common types feature skin-colored/flesh-toned bumps 1-10mm. Flat warts appear smooth/yellowish; genital warts as soft, cauliflower-like; periungual warts cause nail distortion; most asymptomatic but may itch/bleed if traumatized.
+Causes
+Warts result from HPV entry through skin microtrauma, infecting basal keratinocytes and inducing proliferation via E6/E7 oncoproteins that inactivate p53/Rb. Transmission occurs directly (skin-skin) or indirectly (fomites in pools/gyms); autoinoculation spreads locally; incubation 2-6 months; not all HPV types cause warts (high-risk like HPV16 cause cancer).
+Risk Factors
+Key risk factors include skin trauma/cuts (hands/feet), young age (children/teens), weakened immunity (HIV, steroids), warm/moist environments (pools, saunas), crowded living, and occupations with hand exposure (meat handlers). Family clustering, atopic dermatitis, and male circumcision status influence genital warts; bites/nail-biting increase periungual risk.
+Diagnosis
+Diagnosis is clinical via appearance/location: rough hyperkeratotic papules with dermatoglyphic disruption (plantar), confirmed by paring (mosaic pattern) or biopsy (koilocytes, acanthosis, hypergranulosis). Acetowhitening aids genital warts; differentiate from calluses, corns, seborrheic keratosis, or molluscum; HPV typing rarely needed except anogenital.
+Treatment
+Treatment destroys lesions or boosts immunity: salicylic acid (17-40% daily after paring, 50-70% success), cryotherapy (liquid N2 every 2-4 weeks), cantharidin, 5-FU/imiquimod topicals, intralesional bleomycin/candida antigen, or curettage/electrosurgery. Refractory cases use pulsed-dye laser or cimetidine; observe low-risk as 65% resolve in 2 years; no HPV cure.
+Prevention
+Prevention involves avoiding barefoot walking in public areas, not sharing towels/razors/nail clippers, covering cuts, hand hygiene, and HPV vaccination (Gardasil9 covers types 6/11 causing 90% genital warts). Dry skin promptly, discourage nail-biting; high-risk patients use condoms; spontaneous clearance common via cell-mediated immunity.
+

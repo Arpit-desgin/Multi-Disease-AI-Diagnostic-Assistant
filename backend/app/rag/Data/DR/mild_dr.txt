@@ -1,0 +1,16 @@
+Mild diabetic retinopathy (mild NPDR) is the earliest detectable stage of non-proliferative diabetic retinopathy, characterized by minimal retinal vascular damage visible only on dilated fundus exam.
+Definition
+Mild diabetic retinopathy, or mild non-proliferative diabetic retinopathy (NPDR), represents ETDRS level 20, defined by the presence of at least one microaneurysm (small red dots from capillary wall outpouching) but no more than mild hemorrhages/exudates, hard exudates, cotton wool spots, venous beading, or intraretinal microvascular abnormalities (IRMAs). Microaneurysms result from pericyte loss and basement membrane thickening; 80% of cases progress to moderate NPDR within 1-2 years without intervention.mayoclinic+1
+Symptoms
+Patients with mild DR typically experience no visual symptoms; microaneurysms are subclinical and do not affect acuity, contrast, or fields. Incidental detection occurs during routine screening; rare mild blurring relates to concurrent media opacities rather than retinopathy itself.medicalnewstoday+1
+Causes
+Hyperglycemia induces advanced glycation end-products (AGEs) causing pericyte apoptosis, capillary non-perfusion, and microaneurysm formation as the earliest clinically visible vascular incompetence. Increased VEGF from retinal hypoxia contributes; 5-10 year diabetes duration typically precedes mild DR onset.ncbi.nlm.nih+1
+Risk Factors
+Diabetes duration >5 years, HbA1c >7.5%, hypertension, nephropathy, and dyslipidemia accelerate progression from No DR to mild DR. Type 2 diabetes patients often present with mild NPDR at diagnosis due to undetected hyperglycemia duration.mayoclinic+1
+Diagnosis
+Dilated fundus exam reveals 1+ microaneurysms without other lesions; ultra-widefield color fundus photography confirms; OCT may show subtle nerve fiber layer defects but normal macular thickness. FA demonstrates early leakage; AI screening tools achieve >90% sensitivity for mild DR detection.eyewiki+1
+Treatment
+No ocular-specific treatment required; aggressive systemic optimization (HbA1c <7%, BP <130/80 mmHg) slows progression by 50-70% per DCCT/UKPDS. Semiannual screening monitors advancement to moderate NPDR warranting closer follow-up.mayoclinic+1
+Prevention
+Intensive multifactorial intervention (glycemic/lipid/BP control, smoking cessation) prevents 76% of mild DR progression; annual dilated exams detect 95% of cases early when reversible through metabolic correction alone.mayoclinic+1
+

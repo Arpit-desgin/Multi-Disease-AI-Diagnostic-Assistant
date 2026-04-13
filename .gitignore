@@ -7,9 +7,11 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
+# Node modules
+node_modules/
+frontend/node_modules/
+dist/
+dist-ssr/
 *.local
 
 # Editor directories and files
@@ -27,9 +29,51 @@ dist-ssr
 .env
 .env.local
 .env.*.local
+backend/.env
+frontend/.env
+**/.*env
 
 # Build outputs
 coverage
 
 # Dependencies
 bun.lock
+
+# Python virtual environments
+venv/
+venv*/
+env/
+.venv/
+backend/venv/
+backend/venv*/
+backend/venv311/
+**/venv*/
+**/.venv/
+
+# Vector database
+backend/chroma_data/
+backend/app/rag/chroma_data/
+chroma_data/
+**chroma_data/
+
+# ML Model files (large)
+*.pt
+*.pth
+*.onnx
+**/*.pt
+**/*.pth
+**/*.onnx
+backend/app/rag/ml_models/
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~

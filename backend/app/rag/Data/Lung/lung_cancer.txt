@@ -1,0 +1,16 @@
+Lung cancer is a malignant neoplasm originating primarily from bronchial epithelial cells, classified as non-small cell lung cancer (NSCLC, 85%) or small cell lung cancer (SCLC, 15%), representing the leading cause of cancer death worldwide.mayoclinic+1
+Definition
+Lung cancer encompasses uncontrolled proliferation of malignant cells in lung tissue, with NSCLC subtypes including adenocarcinoma (40%, peripheral, non-smokers), squamous cell carcinoma (30%, central, smokers), and large cell carcinoma; SCLC features rapid growth and early metastasis. Staging uses TNM system; genetic drivers include EGFR, ALK, KRAS mutations.clevelandclinic+1
+Symptoms
+Early stage typically asymptomatic; common symptoms include persistent cough (>3 weeks), hemoptysis, dyspnea, chest pain (worse with breathing), hoarseness (recurrent laryngeal nerve), weight loss, fatigue. Advanced: bone pain, headache (brain mets), SVC syndrome (facial swelling), paraneoplastic syndromes (SIADH, hypercalcemia).cancer+1
+Causes
+Primary cause: tobacco smoking (85-90% cases, dose-dependent); other etiologies include radon exposure (second leading), asbestos, diesel exhaust, prior radiation/chemotherapy. Genetic predisposition (rare EGFR germline); air pollution contributes 10-20% urban cases.mayoclinic
+Risk Factors
+Cigarette smoking (20 pack-years = 20x risk), secondhand smoke, radon homes (>4 pCi/L), occupational exposures (asbestos, chromium, arsenic), COPD, pulmonary fibrosis, family history, low fruit/vegetable intake. Never-smokers (15%) often harbor EGFR mutations.clevelandclinic+1
+Diagnosis
+Low-dose CT screening (ages 50-80, ?20 pack-years) detects early nodules; diagnosis via CT-guided biopsy, bronchoscopy (EBUS-TBNA), sputum cytology. PET-CT staging; molecular testing (NGS panel: EGFR, ALK, ROS1, BRAF, PD-L1); brain MRI for stage ?IIIB.clevelandclinic
+Treatment
+Early stage NSCLC: surgery (lobectomy), SBRT (inoperable). Locally advanced: chemoRT ± durvalumab (PACIFIC regimen). Advanced NSCLC: pembrolizumab + chemo (PD-L1+), osimertinib (EGFR), alectinib (ALK), sotorasib (KRAS G12C). SCLC: etoposide/platinum + thoracic RT (limited), immunotherapy (topotecan relapse). Clinical trials essential.lungevity+1
+Prevention
+Smoking cessation (50% risk reduction by 10 years), radon testing/mitigation, workplace exposure controls, annual LDCT screening high-risk, chemoprevention trials (budesonide). Public policy (taxes, bans) prevents 30% attributable deaths.mayoclinic+1
+

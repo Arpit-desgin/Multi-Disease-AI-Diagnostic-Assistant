@@ -5,7 +5,7 @@ import { Menu, X, Activity } from "lucide-react";
 
 const navLinks = [
   { label: "Home", path: "/" },
-  { label: "Upload Scan", path: "/upload" },
+  { label: "Upload Scan", path: "/diseases" },
   { label: "Hospitals", path: "/hospitals" },
 ];
 
@@ -21,7 +21,7 @@ const Navbar = () => {
             <Activity className="h-5 w-5 text-primary-foreground" />
           </div>
           <span className="font-display text-lg font-bold tracking-tight text-foreground">
-            Medi<span className="gradient-text">AI</span>
+            Med<span className="gradient-text">Intel</span>
           </span>
         </Link>
 

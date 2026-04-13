@@ -1,0 +1,16 @@
+Psoriasis is a chronic autoimmune skin disease causing rapid skin cell turnover, leading to thick, scaly, itchy patches on the skin.
+Definition
+Psoriasis is a chronic, immune-mediated inflammatory skin disorder where T-cells trigger excessive keratinocyte proliferation, causing plaques of red, thickened skin covered by silvery-white scales, typically on elbows, knees, scalp, and lower back. It features accelerated epidermal turnover (3-5 days vs. normal 28), with types including plaque (80-90% cases), guttate, pustular, inverse, and erythrodermic; associated with psoriatic arthritis in 30% of patients.
+Symptoms
+Symptoms include well-demarcated erythematous plaques with silvery micaceous scales, itching, burning, or soreness, often with Auspitz sign (pinpoint bleeding on scale removal) and Koebner phenomenon (lesions at trauma sites). Nail changes like pitting, oil-drop spots, or onycholysis affect 50%; severe cases cause erythroderma with systemic fever/chills; scalp involvement leads to stubborn dandruff-like scaling.
+Causes
+Psoriasis results from genetic susceptibility (HLA-Cw6, IL23R genes) plus environmental triggers activating IL-17/IL-23/Th17 axis, causing cytokine storms (TNF-?, IL-17, IL-22) that drive hyperproliferation and angiogenesis. Triggers include streptococcal infection (guttate), stress, ?-blockers, alcohol, smoking, HIV, and skin injury; no single cause but multifactorial immune dysregulation.
+Risk Factors
+Key risk factors include family history (70% heritability), HLA-B27/Cw6 alleles, early-onset (<40 years), obesity (increases severity), smoking (>10 pack-years doubles risk), heavy alcohol use, streptococcal pharyngitis, stress, and metabolic syndrome components (diabetes, hypertension). Metabolic syndrome affects 40%; guttate psoriasis links to recent infections; higher prevalence in Northern Europeans.
+Diagnosis
+Diagnosis is clinical via history/exam showing typical plaques with scale, confirmed by biopsy (parakeratosis, Munro microabscesses, spongiform pustules, dilated capillaries). Differential includes eczema, tinea, seborrheic dermatitis; severity via PASI score; screen for psoriatic arthritis (dactylitis, enthesitis); nail/skinfold exam; labs rule out infection/gout.
+Treatment
+Treatment tiers by severity: topicals (corticosteroids, vitamin D analogs like calcipotriene, tazarotene, calcineurin inhibitors) for mild; phototherapy (NB-UVB, PUVA) for moderate; systemics/biologics (methotrexate, cyclosporine, apremilast) or targeted (IL-17 inhibitors like secukinumab, IL-23 like guselkumab, JAK inhibitors) for severe. Combination therapy optimizes; comorbidities guide choice.
+Prevention
+Prevention involves trigger avoidance (smoking cessation, alcohol moderation, stress management via mindfulness), daily emollients, maintaining BMI <25, treating streptococcal infections promptly, and annual rheumatology/dermatology follow-up. Early intervention prevents progression to psoriatic arthritis; Mediterranean diet may reduce flares; no cure but remission achievable in 70% with adherence.
+

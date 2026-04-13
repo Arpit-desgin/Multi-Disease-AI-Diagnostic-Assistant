@@ -1,0 +1,16 @@
+Proliferative diabetic retinopathy (PDR) represents the most advanced stage where retinal ischemia triggers fragile neovascularization, posing high risk of vitreous hemorrhage and tractional retinal detachment.
+Definition
+Proliferative diabetic retinopathy (ETDRS level 60+) features neovascularization of the disc (NVD) or elsewhere (NVE >1/2 disc area), vitreous/preretinal hemorrhage, or fibrovascular proliferation. New vessels grow from ischemic retina due to VEGF surge; high-risk characteristics (NVD, NVE >1/2 DD, or preretinal hemorrhage) predict 50% severe vision loss within 1 year without treatment.mayoclinic+1
+Symptoms
+Floaters from vitreous hemorrhage, sudden painless vision loss, peripheral field defects; advanced cases show rubeosis iridis (neovascular glaucoma), tractional retinal detachment symptoms (distorted vision, shadows). 30% present with vitreous bleed obscuring fundus view.mayoclinic
+Causes
+Severe retinal ischemia from extensive capillary non-perfusion triggers hypoxia-inducible VEGF, angiopoietin-2, and placental growth factor, stimulating abnormal vessel proliferation on disc, elsewhere, or iris. 15-20 years poor glycemic control typical.ncbi.nlm.nih
+Risk Factors
+HbA1c >9.5%, diabetes >15 years, nephropathy (50% concurrent), pregnancy (rapid progression), cataract surgery (angle neovascularization risk). Type 2 patients have 2x PDR prevalence vs. type 1.ncbi.nlm.nih
+Diagnosis
+Dilated exam reveals neovascular fronds (fine lacy loops), preretinal/vitreous blood, fibrous traction; B-scan ultrasound if media opaque; FA confirms leakage/non-perfusion (>10 disc areas ischemia = PDR threshold). UWF imaging detects 90% peripheral NVE missed on standard 7-field.eyewiki+1
+Treatment
+Urgent retina referral: Panretinal photocoagulation (PRP, 1200-2000 spots) or anti-VEGF (ranibizumab/aflibercept q4-8w) per DRCR Protocol S (anti-VEGF noninferior to PRP, fewer vitrectomies). Vitrectomy indicated for non-clearing vitreous hemorrhage >1 month, tractional detachment involving macula. Rubeosis requires IOP-lowering + PRP/anti-VEGF.pmc.ncbi.nlm.nih+1
+Prevention
+Tight glycemic/BP/lipid control prevents 50% PDR development; fenofibrate (FIELD study) reduces progression 30%; very severe NPDR PRP consideration prevents 60% PDR. Quarterly screening in severe NPDR detects 95% pre-PDR.ncbi.nlm.nih
+

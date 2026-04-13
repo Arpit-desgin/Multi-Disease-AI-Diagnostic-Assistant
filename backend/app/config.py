@@ -3,8 +3,8 @@ from typing import List, Optional
 import json
 import logging
 
-from pydantic_settings import BaseSettings
-from pydantic import field_validator
+from pydantic import BaseModel, field_validator
+from pydantic_settings import BaseSettings, SettingsConfigDict
 
 logger = logging.getLogger("app.config")
 
@@ -15,19 +15,28 @@ class Settings(BaseSettings):
     SECRET_KEY: str = "dev-secret-key-change-in-production"
 
     # External services (optional)
-    GEMINI_API_KEY: Optional[str] = None
+    LLM_PROVIDER: str = "local"
+    OLLAMA_MODEL: str = "mistral"
+    FAISS_INDEX_PATH: str = "app/rag/faiss_index"
+    TOP_K: int = 4
     CLOUDINARY_CLOUD_NAME: Optional[str] = None
     CLOUDINARY_API_KEY: Optional[str] = None
     CLOUDINARY_API_SECRET: Optional[str] = None
     REDIS_URL: Optional[str] = None
+    OPENAI_API_KEY: Optional[str] = None
 
-    # ML model paths
-    LUNG_MODEL_PATH: str = "app/ml_models/lung_cancer_model.h5"
-    SKIN_MODEL_PATH: str = "app/ml_models/skin_disease_model.h5"
-    DR_MODEL_PATH: str = "app/ml_models/diabetic_retinopathy_model.h5"
+    # ML model paths are resolved via pathlib in ml_service.py
+    # (app/ml_models/{diabetic_retinopathy,lung,skin}/)
+    # No path config needed here.
 
     # CORS - should include localhost:8080 for the React frontend
     ALLOWED_ORIGINS: List[str] = ["http://localhost:8080"]
+
+    model_config = SettingsConfigDict(
+        env_file=".env",
+        env_file_encoding="utf-8",
+        extra="ignore"
+    )
 
     @field_validator("ALLOWED_ORIGINS", mode="before")
     @classmethod
@@ -44,10 +53,6 @@ class Settings(BaseSettings):
                 return ["http://localhost:8080"]
         logger.info(f"[CONFIG] Using ALLOWED_ORIGINS as-is: {v}")
         return v
-
-    class Config:
-        env_file = ".env"
-        env_file_encoding = "utf-8"
 
 
 @lru_cache

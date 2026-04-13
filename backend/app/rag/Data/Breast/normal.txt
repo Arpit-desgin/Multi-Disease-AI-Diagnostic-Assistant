@@ -1,0 +1,16 @@
+Breast cancer is a malignant disease originating in breast tissue, most commonly ductal or lobular cells, and the most frequently diagnosed cancer in women worldwide.
+Definition
+Breast cancer is a heterogeneous group of malignant neoplasms arising from epithelial cells of the breast ducts or lobules, with invasive ductal carcinoma (IDC, 70-80% cases) and invasive lobular carcinoma (ILC, 10-15%) being most common. Non-invasive forms include ductal carcinoma in situ (DCIS); molecular subtypes encompass hormone receptor-positive (ER/PR+), HER2-positive, and triple-negative (all receptors negative). It spreads via lymphatics (axilla) or hematogenously, influenced by BRCA1/2 mutations in hereditary cases.clevelandclinic+1
+Symptoms
+Early breast cancer often presents as a painless lump, nipple retraction/discharge, skin dimpling (peau d'orange), or axillary lymphadenopathy; advanced signs include bone pain, jaundice, dyspnea from metastases, or inflammatory changes (red, swollen breast in IBC). Symptoms are unilateral; screening detects asymptomatic cases via mammography.mayoclinic+1
+Causes
+Primary causes involve genetic mutations (BRCA1/2, TP53, PIK3CA) disrupting cell cycle control, hormone exposure (estrogen/progesterone), and growth factors (HER2 amplification); environmental factors like radiation and dense breasts contribute. Most cases sporadic; 5-10% hereditary via germline mutations.bcrf+1
+Risk Factors
+Major risk factors include female sex, age >50, early menarche/late menopause, nulliparity, HRT use, obesity (postmenopausal), alcohol (>1 drink/day), dense breasts, family history (BRCA+ doubles risk), and prior chest radiation. Protective factors: breastfeeding, oophorectomy; Ashkenazi Jewish descent elevates BRCA prevalence.clevelandclinic+1
+Diagnosis
+Diagnosis starts with clinical breast exam/mammography (microcalcifications, masses), confirmed by core biopsy (histology, ER/PR/HER2, Ki-67); ultrasound/MRI for dense breasts/axilla; staging via TNM (sentinel node biopsy, PET-CT for mets). Oncotype DX guides therapy; genetic testing for high-risk.mskcc+1
+Treatment
+Treatment multimodal: surgery (lumpectomy/mastectomy), radiation (post-lumpectomy), endocrine therapy (tamoxifen/aromatase inhibitors for ER+), chemotherapy (anthracyclines/taxanes), HER2-targeted (trastuzumab/pertuzumab), CDK4/6 inhibitors (palbociclib), or immunotherapy (pembrolizumab for TNBC). Neoadjuvant for locally advanced; PARP inhibitors (olaparib) for BRCA+.bcrf+1
+Prevention
+Prevention includes risk-reducing salpingo-oophorectomy/mastectomy for BRCA carriers, tamoxifen/raloxifene chemoprevention (high-risk women), lifestyle (limit alcohol, exercise, healthy weight), and screening (annual mammograms age 40+, MRI for dense breasts/BRCA). Avoid HRT; breastfeeding >1 year reduces risk by 4% per year.mayoclinic+1
+

@@ -1,0 +1,16 @@
+Melanoma is the most serious form of skin cancer, originating from melanocytes and capable of rapid spread if not caught early.
+Definition
+Melanoma is a malignant tumor arising from melanocytes, the pigment-producing cells in the skin, mucosa, or eye, characterized by uncontrolled growth and high metastatic potential. It often presents as an asymmetrical pigmented lesion with irregular borders, color variation, and diameter >6mm (ABCDE rule), progressing from radial to vertical growth phases. Unlike other skin cancers, melanoma can arise in normal skin or existing moles and spreads via lymphatics or bloodstream to distant organs like lungs, liver, or brain.
+Symptoms
+Symptoms of melanoma typically include a new or changing skin spot: asymmetry, irregular borders, multiple colors (black, brown, red, white, blue), diameter >6mm, or evolving size/shape/color. Advanced signs feature itching, bleeding, ulceration, satellite lesions, or swollen lymph nodes; systemic symptoms like fatigue, weight loss, or jaundice indicate metastasis. Early lesions may mimic benign moles, emphasizing self-exam importance.
+Causes
+The primary cause of melanoma is ultraviolet (UV) radiation from sun exposure or tanning beds, damaging melanocyte DNA and triggering mutations in genes like BRAF, NRAS, or KIT. Genetic predisposition (CDKN2A mutations), fair skin (low melanin), numerous nevi, and prior sunburns accelerate risk; non-UV factors include immunosuppression and rare familial syndromes.
+Risk Factors
+Key risk factors include fair skin/hair/eyes, history of severe sunburns (especially childhood), family history of melanoma, multiple atypical/dysplastic nevi (>50 common moles), previous melanoma, UV exposure via tanning beds, and immunosuppression (organ transplant, HIV). Higher incidence affects Caucasians, males over 50, and those with xeroderma pigmentosum; giant congenital nevi pose risk in children.
+Diagnosis
+Diagnosis begins with dermoscopy and full skin exam using ABCDE criteria, confirmed by excisional biopsy with histopathological analysis for Breslow depth, Clark level, ulceration, and mitotic rate. Staging employs sentinel lymph node biopsy (SLNB) for intermediate lesions, PET-CT/MRI for metastasis, and molecular testing (BRAF, NRAS, PD-L1) to guide therapy; confocal microscopy aids non-invasive assessment.
+Treatment
+Treatment depends on stage: wide local excision (± margins 0.5-2cm) for early melanoma, SLNB for staging, adjuvant immunotherapy (pembrolizumab, nivolumab) or targeted therapy (dabrafenib/trametinib for BRAF V600). Advanced/metastatic cases use checkpoint inhibitors (ipilimumab), TIL therapy, or radiation; isolated limb perfusion or surgery manages transit mets, with clinical trials for novel combinations improving survival.
+Prevention
+Prevention focuses on UV protection: broad-spectrum SPF 30+ sunscreen reapplied every 2 hours, UPF clothing/hats/sunglasses, avoiding 10am-4pm sun/ tanning beds, and self-skin exams monthly. High-risk individuals benefit from annual dermatologist checks; public education reduces incidence, as 90% of melanomas link to UV overexposure.
+

@@ -1,0 +1,16 @@
+Dermatitis is inflammation of the skin causing red, itchy, dry rashes, with multiple types like atopic, contact, and seborrheic affecting people of all ages.
+Definition
+Dermatitis refers to a group of inflammatory skin conditions marked by erythema, pruritus, and barrier disruption, including atopic dermatitis (eczema), contact dermatitis (allergic/irritant), seborrheic dermatitis, stasis dermatitis, and nummular dermatitis. Atopic type involves genetic/immune dysfunction with filaggrin defects; contact arises from external triggers; all feature spongiosis and lymphocyte infiltration on histology.
+Symptoms
+Symptoms include intense itching, red/inflamed patches, dry/cracked skin, oozing/crusting vesicles, scaling, and lichenification from chronic scratching. Atopic shows flexural eczema; contact dermatitis presents localized linear vesicles; seborrheic features greasy yellow scales on scalp/face; severe cases cause painful fissures, secondary infection, or sleep disruption from nocturnal pruritus.
+Causes
+Causes vary: atopic from Th2-skewed immunity/genetic barrier defects plus allergens/irritants; allergic contact from haptens (nickel, fragrances) sensitizing T-cells; irritant contact from direct toxicity (soaps, acids); seborrheic from Malassezia yeast overgrowth; stasis from venous insufficiency causing edema. Multifactorial interplay of genetics, environment, and microbes drives flares.
+Risk Factors
+Key risk factors include atopic family history (asthma/allergies), dry skin/atopy, frequent irritant exposure (healthcare workers), allergies (metals, plants), obesity/venous disease (stasis), HIV/Parkinson's (seborrheic), and extremes of age. Women face higher irritant contact risk; urban pollution/antibiotics exacerbate; impaired barrier (e.g., filaggrin mutations) triples atopic odds.
+Diagnosis
+Diagnosis is clinical via history/exam/pattern recognition, with patch testing for allergic contact (e.g., nickel positivity), skin biopsy showing spongiosis/acanthosis if unclear, and severity scores (SCORAD for atopic). Differentiate from psoriasis (sharper borders, no vesicles), fungal infections (KOH prep), or scabies; labs rule out systemic causes.
+Treatment
+Treatment tiers by type/severity: emollients barrier repair, topical corticosteroids (potent for thick plaques, mild for face), calcineurin inhibitors (tacrolimus), PDE4 inhibitors (crisaborole), or antimicrobials for infection. Severe atopic uses dupilumab/JAK inhibitors/phototherapy; wet wraps aid flares; trigger avoidance essential; oral steroids short-term only.
+Prevention
+Prevention focuses on daily fragrance-free moisturizing, gentle cleansers, irritant/allergen avoidance (gloves for chemicals), bleach baths for Staph control in atopic, and humidity control. Atopic infants benefit from exclusive breastfeeding; high-risk occupations use barriers; early intervention prevents chronicity/lichenification.
+

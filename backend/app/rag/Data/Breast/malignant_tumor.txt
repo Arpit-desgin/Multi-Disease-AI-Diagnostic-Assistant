@@ -1,0 +1,16 @@
+Malignant breast tumors represent cancerous growths that invade surrounding tissues and can metastasize, primarily invasive ductal carcinoma and lobular carcinoma, requiring prompt multimodal treatment.
+Definition
+Malignant breast tumors are invasive cancerous neoplasms originating from ductal or lobular epithelium, capable of local invasion and distant metastasis via lymphatics or bloodstream. Invasive ductal carcinoma (IDC, 70-80%) forms firm masses breaking through basement membrane; invasive lobular carcinoma (ILC, 10-15%) shows Indian file pattern; subtypes include triple-negative, HER2+, and hormone-positive, graded by Nottingham criteria.clevelandclinic+1
+Symptoms
+Symptoms include hard, irregular fixed lumps (often painless), nipple retraction/discharge (bloody), skin dimpling/peau d'orange, axillary swelling, or inflammatory changes (redness/swelling in IBC). Advanced features: bone pain, weight loss, dyspnea from lung/liver mets; 90% present as palpable mass in upper outer quadrant.mayoclinic+1
+Causes
+Malignant transformation stems from cumulative genetic/epigenetic hits (BRCA1/2, TP53, PIK3CA mutations) disrupting apoptosis/proliferation, amplified by estrogen exposure, HER2 overexpression, and microenvironment changes. Sporadic (90%) vs. hereditary (10%); radiation/dense breasts accelerate.bcrf+1
+Risk Factors
+Key risks: female sex, age >50, BRCA mutations (lifetime risk 50-85%), dense breasts, nulliparity, late menopause, HRT/alcohol, obesity (postmenopausal), family history, prior chest radiation. Protective: oophorectomy, breastfeeding >1yr (4%/yr risk reduction).clevelandclinic+1
+Diagnosis
+Diagnosis via triple test: exam, imaging (mammogram asymmetry/microcalcifications, US, MRI), core biopsy (ER/PR/HER2 IHC, Ki-67). Staging: TNM/sentinel node/PET-CT; Oncotype DX predicts recurrence; 80% sensitivity mammography.mskcc+1
+Treatment
+Multimodal: surgery (lumpectomy/mastectomy ± reconstruction), radiation (post-lumpectomy), neoadjuvant/adjuvant chemo (taxanes/anthracyclines), endocrine (tamoxifen/AIs for ER+), HER2-targeted (trastuzumab), CDK4/6 (palbociclib), PARP (olaparib BRCA+), immunotherapy (pembrolizumab TNBC).who+1
+Prevention
+Prevention: risk-reducing mastectomy/salpingo-oophorectomy (BRCA), chemoprevention (tamoxifen/raloxifene RR=0.5 high-risk), screening (mammograms 40+, MRI dense/BRCA), lifestyle (limit alcohol, exercise, BMI<25). No universal vaccine; early detection cures 99% stage I.mayoclinic+1
+

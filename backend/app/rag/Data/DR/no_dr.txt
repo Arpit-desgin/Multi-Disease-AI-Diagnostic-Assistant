@@ -1,0 +1,16 @@
+"No DR" refers to the absence of diabetic retinopathy in diabetic patients, representing the earliest stage (0) where retinal blood vessels show no visible damage despite diabetes exposure.
+Definition
+No diabetic retinopathy (No DR), or DR Stage 0, describes diabetic patients whose fundus exam reveals a completely normal retina with no microaneurysms, hemorrhages, exudates, cotton wool spots, venous beading, or neovascularization. While histologically microvascular changes may exist (subclinical leakage/thickening), clinical grading systems (ETDRS, Early Treatment Diabetic Retinopathy Study) classify retinas as normal when no lesions meet minimum severity thresholds.mayoclinic+1
+Symptoms
+Patients with No DR experience no vision changes or symptoms attributable to retinopathy; any visual complaints relate to diabetes effects on lens (fluctuating refraction from sorbitol accumulation) or other causes. Normal visual acuity, contrast sensitivity, and color vision distinguish No DR from even mild NPDR.pmc.ncbi.nlm.nih+1
+Causes
+No DR reflects effective diabetes management preventing hyperglycemia-induced retinal capillary pericytes apoptosis, basement membrane thickening, and blood-retinal barrier breakdown. Factors preserving normal retinas include short diabetes duration (<5 years), HbA1c <7%, normal blood pressure, absence of nephropathy, and genetic resistance to retinopathy progression.pmc.ncbi.nlm.nih+1
+Risk Factors
+Recent diabetes diagnosis, excellent glycemic control (HbA1c <6.5%), type 1 diabetes <5 years duration, young age at onset, absence of hypertension/dyslipidemia, and certain protective genotypes characterize patients remaining at No DR. Poor control guarantees progression within 10-15 years.ncbi.nlm.nih+1
+Diagnosis
+Diagnosis requires comprehensive dilated fundus exam revealing pristine retinal vasculature, normal optic disc, and unremarkable macula; ultra-widefield imaging confirms no peripheral dots/blood. OCT shows normal foveal thickness (<280?m); no microaneurysms on FA; screening classifies as "No DR" with annual monitoring recommended.mayoclinic+1
+Treatment
+No specific ocular treatment needed; management focuses on systemic prevention through intensive diabetes control (HbA1c target <7%), blood pressure <130/80 mmHg, statins for lipids, and annual screening to detect transition to mild NPDR. Patient education emphasizes compliance to maintain No DR status.ncbi.nlm.nih+1
+Prevention
+Prevention of progression from No DR involves tight glycemic control (DCCT/UKPDS evidence shows 76% risk reduction), smoking cessation, healthy BMI, ACE inhibitors for microalbuminuria, and consistent annual dilated exams. Early intervention preserves normal retina in 80-90% of motivated patients.mayoclinic+1
+

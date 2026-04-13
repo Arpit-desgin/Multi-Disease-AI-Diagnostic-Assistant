@@ -1,0 +1,19 @@
+Breast calcifications are calcium deposits in breast tissue visible on mammograms, often benign but sometimes signaling early breast cancer through suspicious patterns like clustered microcalcifications.
+Definition
+Mammogram illustrating microcalcifications within ductal carcinoma in situ. 
+Breast calcifications are micro- or macro- deposits of calcium salts in breast tissue, appearing as white spots on mammography; macrocalcifications (>0.5mm) are typically benign popcorn-like or rod-shaped, while microcalcifications (<0.5mm) in tight clusters, linear/branching patterns may indicate ductal carcinoma in situ (DCIS) or invasive cancer due to necrotic debris from rapid cell turnover.
+This mammogram shows clustered microcalcifications characteristic of DCIS, appearing as fine bright specks often requiring biopsy.
+Symptoms
+Breast calcifications produce no palpable symptoms or pain; detected incidentally on screening mammograms as asymptomatic white flecks/spots. Suspicious patterns prompt further imaging/biopsy, but patients notice no lumps, discharge, or skin changes unless associated with underlying malignancy.
+Causes
+Calcifications form from calcium precipitation in necrotic/apoptotic cells, secretory material, or fibrosis; benign causes include cysts, fibroadenomas, fat necrosis, ectatic ducts, prior surgery/radiation, or aging vessels. Malignant microcalcifications arise from DCIS tumor necrosis or invasive ductal carcinoma outgrowing blood supply, with hydroxyapatite composition differing from bone.
+Risk Factors
+Risk factors mirror breast cancer: age >50, dense breasts, prior biopsies showing atypia, family history, hormonal factors; benign calcifications link to fibrocystic changes, injury, or inflammation. Microcalcifications confer higher malignancy risk (12-40% biopsy yield) vs. macro (benign).
+Diagnosis
+Diagnosis via mammography (BI-RADS scoring: 3 probably benign, 4/5 suspicious); magnification views assess morphology/distribution (pleomorphic, linear = malignant); ultrasound differentiates solid masses; stereotactic/core biopsy samples calcifications for histology (DCIS vs. benign); tomosynthesis reduces false positives.
+Mammogram comparison highlighting suspicious calcification clusters (red arrow) vs. normal tissue.
+Treatment
+Benign/macrocalcifications require no treatment, just follow-up imaging; suspicious microcalcifications trigger biopsy—negative results prompt surveillance, while DCIS/cancer leads to excision, radiation, endocrine therapy, or mastectomy based on extent/grade. No direct calcification treatment.
+Prevention
+Prevention focuses on breast cancer risk reduction (mammogram screening 40+, healthy weight, limit alcohol/HRT) since calcifications reflect underlying pathology; no specific calcification prevention, but early detection via annual imaging identifies 93% DCIS cases.
+
